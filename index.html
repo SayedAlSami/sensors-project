@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Friend Compass</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <h1>Friend Compass</h1>
+    <p class="subtitle">Find your friends using GPS and your phone compass</p>
+
+    <!-- JOIN SCREEN -->
+    <div id="joinScreen" class="card">
+
+        <h2>Join a Room</h2>
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Your name"
+            maxlength="20"
+        >
+
+        <input
+            type="text"
+            id="roomInput"
+            placeholder="Room code"
+            maxlength="20"
+        >
+
+        <button id="joinButton">
+            Join Room
+        </button>
+
+        <p id="joinError" class="error"></p>
+
+    </div>
+
+
+    <!-- MAIN APP -->
+    <div id="mainApp" class="hidden">
+
+        <div class="room-info">
+            Room:
+            <strong id="roomDisplay"></strong>
+        </div>
+
+
+        <!-- USER SELECTION -->
+
+        <div class="card">
+
+            <h2>Find a Friend</h2>
+
+            <select id="userSelect">
+                <option value="">Select a user</option>
+            </select>
+
+        </div>
+
+
+        <!-- COMPASS -->
+
+        <div class="compass-container">
+
+            <div class="compass">
+
+                <div class="direction north">N</div>
+                <div class="direction east">E</div>
+                <div class="direction south">S</div>
+                <div class="direction west">W</div>
+
+                <div id="arrow">
+                    ↑
+                </div>
+
+                <div class="center-dot"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMATION -->
+
+        <div class="card information">
+
+            <h2 id="targetName">
+                No target selected
+            </h2>
+
+            <div class="info-row">
+                <span>Distance</span>
+                <strong id="distance">--</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Direction</span>
+                <strong id="directionText">--</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Bearing</span>
+                <strong id="bearing">--</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Your heading</span>
+                <strong id="heading">--</strong>
+            </div>
+
+        </div>
+
+
+        <!-- USERS -->
+
+        <div class="card">
+
+            <h2>Users in Room</h2>
+
+            <div id="usersList"></div>
+
+        </div>
+
+
+        <button id="compassButton">
+            Enable Compass
+        </button>
+
+        <button id="leaveButton" class="leave">
+            Leave Room
+        </button>
+
+        <p id="status"></p>
+
+    </div>
+
+</div>
+
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
